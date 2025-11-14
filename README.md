@@ -57,6 +57,7 @@ Retrieves and formats a numeric benchmark score. Rounds to integer by default; d
 
 **Example:**
 ```bash
+
                   PassMark PerformanceTest Linux (11.0.1004)
 
 AMD EPYC 7B13 (x86_64)
@@ -88,6 +89,8 @@ Memory Mark:                       1608
 --- Cleaning up temporary files ---
 Temporary directory passmark_auto_test_32518 cleaned up.
 -------------------------------------------
+
+
 ## Notes
 
 - The script creates a temporary directory (`passmark_auto_test_$$`) and cleans it up after completion
