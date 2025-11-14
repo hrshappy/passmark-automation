@@ -5,8 +5,10 @@ prepares, and runs PassMark PerformanceTest on Linux in non-interactive
 mode and formats the results for display.
 
 Files
-- `One‑click fully automated download, installation, and execution of Passmark PerformanceTest on Linux for CPU single‑core and multi‑core benchmark testing.sh`
+- `passmark_auto.sh`
   - The main automation script (single-file, POSIX shell).
+- `README.md`
+  - This documentation and quick start guide.
 
 Quick Start
 
@@ -16,25 +18,22 @@ Recommended — clone the repository and run the script (avoids filename encodin
 # clone the repo (shallow clone)
 git clone --depth 1 https://github.com/hrshappy/passmark-automation.git
 cd passmark-automation
-# run the script with elevated privileges so package installs can succeed
-sudo bash "One‑click fully automated download, installation, and execution of Passmark PerformanceTest on Linux for CPU single‑core and multi‑core benchmark testing.sh"
+# run the simplified script with elevated privileges so package installs can succeed
+sudo bash passmark_auto.sh
 ```
 
 Alternative — download the script directly and run (use only if you trust the source):
 
 ```bash
 # curl (preferred) — save to /tmp, mark executable and run
-curl -fsSL https://raw.githubusercontent.com/hrshappy/passmark-automation/main/One-%E2%80%91click%20fully%20automated%20download%2C%20installation%2C%20and%20execution%20of%20Passmark%20PerformanceTest%20on%20Linux%20for%20CPU%20single%E2%80%91core%20and%20multi%E2%80%91core%20benchmark%20testing.sh -o /tmp/passmark_auto.sh
+curl -fsSL https://raw.githubusercontent.com/hrshappy/passmark-automation/main/passmark_auto.sh -o /tmp/passmark_auto.sh
 chmod +x /tmp/passmark_auto.sh
 sudo /tmp/passmark_auto.sh
 
 # wget variant:
-# wget -qO /tmp/passmark_auto.sh "https://raw.githubusercontent.com/hrshappy/passmark-automation/main/One-%E2%80%91click%20fully%20automated%20download%2C%20installation%2C%20and%20execution%20of%20Passmark%20PerformanceTest%20on%20Linux%20for%20CPU%20single%E2%80%91core%20and%20multi%E2%80%91core%20benchmark%20testing.sh"
+# wget -qO /tmp/passmark_auto.sh https://raw.githubusercontent.com/hrshappy/passmark-automation/main/passmark_auto.sh
 # chmod +x /tmp/passmark_auto.sh && sudo /tmp/passmark_auto.sh
 ```
-
-Security note: always review a script before running it with `sudo`.
-If the filename in the repository contains special/unusual characters, prefer the git-clone method to avoid URL-encoding issues.
 
 Prerequisites
 - Internet access to download the PassMark package.
@@ -80,6 +79,3 @@ Short Chinese summary
 此脚本在 Linux 上自动下载并运行 PassMark PerformanceTest，
 并从生成的 `results*.yml` 中提取、格式化测试结果。需要网络、
 并可能需要以 root 权限安装兼容库以运行 PassMark。
-One-click automated download, install and run PassMark PerformanceTest on Linux.
-
-See the script: One‑click fully automated download, installation, and execution of Passmark PerformanceTest on Linux for CPU single‑core and multi‑core benchmark testing.sh
