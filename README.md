@@ -59,9 +59,7 @@ Retrieves and formats a numeric benchmark score. Rounds to integer by default; d
 ```bash
 CPU_MARK=$(get_score "SUMM_CPU:")
 ```
-
-
-                  PassMark PerformanceTest Linux (11.0.1004)
+                 PassMark PerformanceTest Linux (11.0.1004)
 
 AMD EPYC 7B13 (x86_64)
 1 cores @ 0 MHz  |  0 GiB RAM
@@ -88,9 +86,6 @@ Memory Mark:                       1608
   Memory Threaded                  16687 MB/s                    
 --------------------------------------------------------------------------------
 
--------------------------------------------
---- Cleaning up temporary files ---
-Temporary directory passmark_auto_test_32518 cleaned up.
 -------------------------------------------
 
 ## Notes
