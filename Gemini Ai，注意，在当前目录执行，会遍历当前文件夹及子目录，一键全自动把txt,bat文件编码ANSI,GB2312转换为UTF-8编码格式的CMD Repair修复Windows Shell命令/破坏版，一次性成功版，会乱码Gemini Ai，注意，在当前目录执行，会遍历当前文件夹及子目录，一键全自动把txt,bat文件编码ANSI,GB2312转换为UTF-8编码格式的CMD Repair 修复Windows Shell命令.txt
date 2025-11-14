@@ -1,0 +1,39 @@
+@echo off
+rem 设置控制台为UTF-8编码，以正确显示中文提示
+chcp 65001 > nul
+
+title 批量文件编码转换工具 (UTF-8 无BOM)
+
+echo.
+echo =================================================================
+echo.
+echo            欢迎使用批量文件编码转换工具
+echo.
+echo  本工具会将当前目录及所有子目录下的 .txt 和 .bat 文件
+echo  从默认的ANSI(GBK)编码，统一转换为 UTF-8 (无BOM) 格式。
+echo.
+echo  重要提示：此操作将直接覆盖原始文件，建议操作前备份！
+echo.
+echo =================================================================
+echo.
+pause
+echo.
+echo --- 开始执行转换，请稍候... ---
+echo.
+
+rem --- 调用PowerShell核心代码执行转换 ---
+powershell.exe -ExecutionPolicy Bypass -NoProfile -Command "& { $sourceEncodingName = 'GB2312'; $fileTypes = '*.txt', '*.bat'; Get-ChildItem -Path '.\*' -Include $fileTypes -Recurse | ForEach-Object { try { $sourceEncoding = [System.Text.Encoding]::GetEncoding($sourceEncodingName); $content = [System.IO.File]::ReadAllText($_.FullName, $sourceEncoding); $utf8Encoding = New-Object System.Text.UTF8Encoding($false); [System.IO.File]::WriteAllText($_.FullName, $content, $utf8Encoding); Write-Host "成功转换: $($_.FullName)"; } catch { Write-Warning "转换失败: $($_.FullName) - $($_.Exception.Message)"; } } }"
+
+echo.
+echo --- 所有文件处理完毕！---
+echo.
+echo =================================================================
+echo.
+echo  转换已完成。您可以检查文件内容是否已恢复正常。
+echo.
+echo  这个窗口将保持打开，方便您查看转换日志。
+echo  您可以随时按任意键关闭此窗口。
+echo.
+echo =================================================================
+echo.
+pause
