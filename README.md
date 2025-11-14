@@ -9,17 +9,32 @@ Files
   - The main automation script (single-file, POSIX shell).
 
 Quick Start
-1. Make the script executable:
+
+Recommended — clone the repository and run the script (avoids filename encoding issues):
 
 ```bash
-chmod +x "One‑click fully automated download, installation, and execution of Passmark PerformanceTest on Linux for CPU single‑core and multi‑core benchmark testing.sh"
+# clone the repo (shallow clone)
+git clone --depth 1 https://github.com/hrshappy/passmark-automation.git
+cd passmark-automation
+# run the script with elevated privileges so package installs can succeed
+sudo bash "One‑click fully automated download, installation, and execution of Passmark PerformanceTest on Linux for CPU single‑core and multi‑core benchmark testing.sh"
 ```
 
-2. Run with root privileges (needed to install packages when required):
+Alternative — download the script directly and run (use only if you trust the source):
 
 ```bash
-sudo ./"One‑click fully automated download, installation, and execution of Passmark PerformanceTest on Linux for CPU single‑core and multi‑core benchmark testing.sh"
+# curl (preferred) — save to /tmp, mark executable and run
+curl -fsSL https://raw.githubusercontent.com/hrshappy/passmark-automation/main/One-%E2%80%91click%20fully%20automated%20download%2C%20installation%2C%20and%20execution%20of%20Passmark%20PerformanceTest%20on%20Linux%20for%20CPU%20single%E2%80%91core%20and%20multi%E2%80%91core%20benchmark%20testing.sh -o /tmp/passmark_auto.sh
+chmod +x /tmp/passmark_auto.sh
+sudo /tmp/passmark_auto.sh
+
+# wget variant:
+# wget -qO /tmp/passmark_auto.sh "https://raw.githubusercontent.com/hrshappy/passmark-automation/main/One-%E2%80%91click%20fully%20automated%20download%2C%20installation%2C%20and%20execution%20of%20Passmark%20PerformanceTest%20on%20Linux%20for%20CPU%20single%E2%80%91core%20and%20multi%E2%80%91core%20benchmark%20testing.sh"
+# chmod +x /tmp/passmark_auto.sh && sudo /tmp/passmark_auto.sh
 ```
+
+Security note: always review a script before running it with `sudo`.
+If the filename in the repository contains special/unusual characters, prefer the git-clone method to avoid URL-encoding issues.
 
 Prerequisites
 - Internet access to download the PassMark package.
