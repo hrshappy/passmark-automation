@@ -57,41 +57,8 @@ Retrieves and formats a numeric benchmark score. Rounds to integer by default; d
 
 **Example:**
 ```bash
-
-
-
-                  PassMark PerformanceTest Linux (11.0.1004)
-
-AMD EPYC 7B13 (x86_64)
-1 cores @ 0 MHz  |  0 GiB RAM
-Number of Processes: 1  |  Test Iterations: 1  |  Test Duration: Medium
---------------------------------------------------------------------------------
-CPU Mark:                          2262                          
-  Integer Math                     5210 Million Operations/s     
-  Floating Point Math              4203 Million Operations/s     
-  Prime Numbers                    16.1 Million Primes/s         
-  Sorting                          3123 Thousand Strings/s       
-  Encryption                       1129 MB/s                     
-  Compression                      21164 KB/s                    
-  CPU Single Threaded              2217 Million Operations/s     
-  Physics                          291 Frames/s                  
-  Extended Instructions (SSE)      1811 Million Matrices/s       
-
-Memory Mark:                       1608                          
-  Database Operations              903 Thousand Operations/s     
-  Memory Read Cached               24277 MB/s                    
-  Memory Read Uncached             16832 MB/s                    
-  Memory Write                     17339 MB/s                    
-  Available RAM                    2153 Megabytes                
-  Memory Latency                   63 Nanoseconds                
-  Memory Threaded                  16687 MB/s                    
---------------------------------------------------------------------------------
-
--------------------------------------------
---- Cleaning up temporary files ---
-Temporary directory passmark_auto_test_32518 cleaned up.
--------------------------------------------
-
+CPU_MARK=$(get_score "SUMM_CPU:")
+```
 
 ## Notes
 
