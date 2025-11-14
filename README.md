@@ -58,6 +58,8 @@ Retrieves and formats a numeric benchmark score. Rounds to integer by default; d
 **Example:**
 ```bash
 
+
+
                   PassMark PerformanceTest Linux (11.0.1004)
 
 AMD EPYC 7B13 (x86_64)
